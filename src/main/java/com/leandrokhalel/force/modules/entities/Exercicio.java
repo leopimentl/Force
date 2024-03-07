@@ -5,5 +5,5 @@ public enum Exercicio {
     SUPINO,
     REMADA_CURVADA,
     AGACHAMENTO;
-
+    //
 }

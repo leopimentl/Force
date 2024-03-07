@@ -1,7 +1,9 @@
 package com.leandrokhalel.force.modules.controllers;
 
+import com.leandrokhalel.force.modules.dtos.RotinaDTO;
 import com.leandrokhalel.force.modules.entities.Rotina;
 import com.leandrokhalel.force.modules.repositories.RotinaRepository;
+import com.leandrokhalel.force.modules.services.RotinaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,15 +14,15 @@ import java.util.List;
 public class RotinaController {
 
     @Autowired
-    private RotinaRepository rotinaRepository;
+    private RotinaService rotinaService;
 
     @GetMapping
-    public List<Rotina> findAll() {
-        return rotinaRepository.findAll();
+    public List<RotinaDTO> findAll() {
+        return rotinaService.findAll();
     }
 
     @PostMapping
-    public Rotina save(@RequestBody Rotina rotina) {
-        return rotinaRepository.save(rotina);
+    public RotinaDTO save(@RequestBody RotinaDTO rotinaDTO) {
+        return rotinaService.save(rotinaDTO);
     }
 }
